@@ -4,10 +4,13 @@ import axios from 'axios';
 
 const Main = () => {
   const [search, setSearch] = useState("");
-  
+  const[bookData, setBookData]=useState([]);
+
   const searchBook=(evt) =>{
     if(evt.key === "Enter"){
-      console.log("hello");
+      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBAl7EZKeMgRkkinzAcyjME88pDGVJPbzw'+'&maxResults=40')
+      .then(res=>setBookData(res.data.items))
+      .catch(err=>console.log(err))  
     }
   }
 
@@ -22,19 +25,16 @@ const Main = () => {
           <div className="search">
             <input type="text" placeholder='Ingresa el nombre del libro'
             value = {search} onChange={e => setSearch(e.target.value)}
-            onKeyPress={searchBook}/>
-            <button><i class="bi bi-search"></i></button>
+            onKeyDown={searchBook}/>
+            <button><i className="bi bi-search"></i></button>
           </div>
           {/* <img src='./img/bg1.png' alt="Libros" /> */}
         </div> 
       </div>
       <div className="container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          <Card book={bookData} />
+        }
       </div>
     </>
   );
