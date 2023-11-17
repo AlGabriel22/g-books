@@ -7,8 +7,8 @@
 }
 
 :root {
-    --primary-color: #b692d0;
-    --secondary-color: #fff0f5;
+    --primary-color: #cfcfcf;
+    --secondary-color: #fbfbfb;
 }
 
 body {
@@ -44,7 +44,7 @@ html {
     background-image: url('../img/bg1.png');
     background-repeat: no-repeat;
     background-size: cover; 
-    clip-path: circle(90% at right 100px);
+    /* clip-path: circle(90% at right 100px); */
     z-index: -1;
 }
 

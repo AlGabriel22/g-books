@@ -17,9 +17,9 @@ const Main = () => {
   return (
     <>
       <div className='header'>
-        <div className='row1'>
+        {/* <div className='row1'>
           <h1>Una habitación sin libros es como<br /> un cuerpo sin alma.</h1>
-        </div>  
+        </div>   */}
         <div className='row2'>
           <h2>Encuentra tu libro</h2>
           <div className="search">
